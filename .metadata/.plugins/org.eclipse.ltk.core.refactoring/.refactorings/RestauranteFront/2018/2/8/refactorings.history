@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.es.everis.beca.front.Menu&apos; to &apos;MenuApp&apos;&#x0D;&#x0A;- Original project: &apos;RestauranteFront&apos;&#x0D;&#x0A;- Original element: &apos;com.es.everis.beca.front.Menu&apos;&#x0D;&#x0A;- Renamed element: &apos;com.es.everis.beca.front.MenuApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Menu&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.es.everis.beca.front{Menu.java[Menu" matchStrategy="1" name="MenuApp" qualified="false" references="true" similarDeclarations="false" stamp="1519299141436" textual="false" version="1.0"/>
+</session>

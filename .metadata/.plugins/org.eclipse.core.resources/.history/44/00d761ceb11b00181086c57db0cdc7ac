@@ -1,0 +1,25 @@
+package com.es.everis.beca.restaurante;
+
+public class Reserva {
+
+	private int idReserva;
+
+	static int contador;
+	
+	private Persona[] clientes;
+	
+	public Reserva() {
+		this.idReserva = ++contador;
+	}
+
+	public int getIdReserva() {
+		return idReserva;
+	}
+
+	@Override
+	public String toString() {
+		return "Reserva [idReserva=" + idReserva + "]";
+	}
+	
+	
+}

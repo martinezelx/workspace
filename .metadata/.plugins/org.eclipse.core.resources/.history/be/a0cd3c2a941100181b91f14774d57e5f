@@ -1,0 +1,12 @@
+package com.domain.sabadell;
+
+import java.util.Date;
+
+public class Cliente {
+
+	private String DNI;
+	private String name;
+	private String surname;
+	private Date fecnac;
+	
+}

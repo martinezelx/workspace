@@ -1,0 +1,92 @@
+package com.es.everis.beca.front;
+
+import java.util.Scanner;
+
+import com.es.everis.beca.restaurante.*;
+import com.es.everis.beca.restaurante.controller.*;
+
+public class MenuApp {
+	
+	public static void main(String[] args) {
+				
+		Restaurante.inicializarRestaurante();
+		
+		//Acceder a los recursos
+		
+//		Restaurante.empleados;
+//		Restaurante.mesas;
+//		Restaurante.reservas
+		
+		
+		showMenu();
+
+	}
+	
+	
+	
+	
+	static void showMenu() {
+		
+		System.out.println("---------------------------------------------------");
+		System.out.println("Bienvenido a LaMafiaPrograma, elige una opción :");
+		System.out.println("1 - Reservar Mesa");
+		System.out.println("2 - Listar Mesas");
+		System.out.println("3 - Listar Reservas");
+		System.out.println("4 - Facturar");
+		System.out.println("---------------------------------------------------");
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);	
+		int opcion = scan.nextInt();
+		
+		//MENU
+		switch (opcion) {
+		case 1:		
+			//SUBMENU 1
+			System.out.println("Introduce el nombre de la reserva: ");
+			Scanner scan2 = new Scanner(System.in);
+			String nombre = scan2.nextLine();
+			
+			System.out.println("¿Que mesa desea?");
+			Scanner scan3 = new Scanner(System.in);
+			String numeromesa = scan3.nextLine();
+			
+			
+			//Lógica de reservar mesa
+			ReservaController control = new ReservaController(); //Creo objeto control
+			Persona[] personas = new Persona[4];				// Creo un array de personas con 5 posiciones
+			Persona cliente= new Cliente();						// Creo nuevo cliente
+			cliente.setNombre(nombre);							// Seteo el nombre introducido en scan2 a cliente
+			personas[0] = cliente;								// guardo este cliente  en la posicion 0 del array		
+			control.reservarMesa(personas);
+			
+			
+			//System.out.println("La persona" + personas[0] + "ha reservado la mesa" + Restaurante.mesas[0]);
+			
+			showMenu();
+			break;
+			
+		case 2:
+			//SUBMENU 2
+			System.out.println("Listando Mesas......");
+			
+			ReservaController.listarMesas();
+			
+			showMenu();
+			break;
+		case 3:	
+
+			//listarReservas();
+			
+			showMenu();
+			break;
+		case 4:	
+			System.out.println("has elegido 4");
+			break;
+		}
+		
+		//showMenu();
+		
+	}
+
+}

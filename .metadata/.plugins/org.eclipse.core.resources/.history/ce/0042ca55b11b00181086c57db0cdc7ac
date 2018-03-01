@@ -1,0 +1,14 @@
+package com.es.everis.beca.restaurante;
+
+public class Reserva {
+
+	private int idReserva;
+
+	static int contador;
+	
+	public Reserva() {
+		this.idReserva = ++contador;
+	}
+	
+	
+}

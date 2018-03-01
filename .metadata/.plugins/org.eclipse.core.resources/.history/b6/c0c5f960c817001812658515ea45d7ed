@@ -1,0 +1,12 @@
+package com.es.everis.beca.restaurante;
+
+public class Mesa {
+
+	private Persona camarero;
+	
+	private Pedido pedido;
+	
+	private Persona[] clientes;
+	
+	
+}

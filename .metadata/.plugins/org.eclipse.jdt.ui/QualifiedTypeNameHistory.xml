@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.domain.sabadell.Vehiculo"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="com.curso.sabadell.Persona"/>
+<fullyQualifiedTypeName name="com.es.everis.beca.restaurante.Mesa"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="com.es.everis.beca.restaurante.controller.ReservaController"/>
+<fullyQualifiedTypeName name="com.es.everis.beca.restaurante.Restaurante"/>
+<fullyQualifiedTypeName name="com.es.everis.beca.restaurante.Persona"/>
+<fullyQualifiedTypeName name="java.security.MessageDigestSpi"/>
+</qualifiedTypeNameHistroy>

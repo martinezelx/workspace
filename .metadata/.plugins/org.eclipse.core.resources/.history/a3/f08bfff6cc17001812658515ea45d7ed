@@ -1,0 +1,48 @@
+package com.es.everis.beca.restaurante;
+
+import java.util.Arrays;
+
+public class Mesa {
+	
+
+	private Persona camarero;
+	
+	private Pedido pedido;
+	
+	private Persona[] clientes;
+	
+	
+	//
+	public Persona getCamarero() {
+		return camarero;
+	}
+
+	public void setCamarero(Persona camarero) {
+		this.camarero = camarero;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	public Persona[] getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(Persona[] clientes) {
+		this.clientes = clientes;
+	}
+
+	@Override
+	public String toString() {
+		return "Mesa [camarero=" + camarero + ", pedido=" + pedido + ", clientes=" + Arrays.toString(clientes) + "]";
+	}
+	
+	
+	
+	
+}

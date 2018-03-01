@@ -1,0 +1,85 @@
+package com.es.everis.beca.restaurante.controller;
+
+import com.es.everis.beca.restaurante.*;
+
+public class ReservaController {
+	
+	public void hacerReserva(Persona[] persona, int numeromesa) {
+			
+		//COMPROBAR QUE LA MESA NO ESTA RESERVADA YA
+		for (int i3 = 0; i3 < Restaurante.mesas.length; i3++) {
+			
+			Mesa mesa = Restaurante.mesas[i3];
+			
+			if (mesa.getClientes()==null) {
+				//OK 
+			}else {
+				if (numeromesa == mesa.getIdMesa()) {
+					System.out.println("Esa mesa ya esta reservada");
+					break;
+				}
+			}				
+		} 
+		
+		//AGREGAR LA MESA AL ARRAY
+		for (int i = 0; i < Restaurante.mesas.length; i++) {
+					
+			Mesa mesa = Restaurante.mesas[numeromesa-1];	
+			
+			if (mesa.getClientes()==null) {
+				mesa.setClientes(persona);
+				break;
+			} 
+			
+		} 
+			
+		//AGREGAR LA RESERVA AL ARRAY
+		for (int i2 = 0; i2 < Restaurante.reservas.length; i2++) {
+			
+				Reserva reserva = Restaurante.reservas[i2];	
+				reserva.setNumeromesa(numeromesa);
+				
+				if (reserva.getClientes()==null) {
+					reserva.setClientes(persona);
+					break;
+				} 
+			
+		}
+	} //public void hacerReserva(Persona[] persona, int numeromesa)
+	
+	
+	public static void listarMesas() {
+		
+		for (int i = 0; i < Restaurante.mesas.length; i++) {
+			
+			System.out.println("Mesa: " + Restaurante.mesas[i]);
+			
+		} 
+		
+	} //listarMesas()
+	
+	public static void listarReservas() {
+		
+		for (int i = 0; i < Restaurante.reservas.length; i++) {
+			
+			System.out.println("Reservas: " + Restaurante.reservas[i]);
+			
+		} 
+		
+	} //listarReservas()
+	
+
+	public static void liberarReserva(int liberarmesa) {
+		
+		for (int i = 0; i < Restaurante.mesas.length; i++) {
+			
+			
+		}
+		
+		
+	}
+		
+		
+	
+
+}

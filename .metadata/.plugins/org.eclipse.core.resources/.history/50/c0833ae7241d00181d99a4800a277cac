@@ -1,0 +1,108 @@
+package com.es.everis.beca.front;
+
+import java.util.Scanner;
+
+import com.es.everis.beca.restaurante.*;
+import com.es.everis.beca.restaurante.controller.*;
+
+public class MenuApp {
+	
+	public static void main(String[] args) {
+				
+		Restaurante.inicializarRestaurante();
+		
+		showMenu();
+	}
+	
+	static void showMenu() {
+		
+		System.out.println("*--------------------------------------------------*");
+		System.out.println("| Bienvenido a LaMafiaPrograma, elige una opción : |");
+		System.out.println("*--------------------------------------------------*");
+		System.out.println("************************");
+		System.out.println("| 1 - Reservar Mesa    |");
+		System.out.println("| 2 - Listar Mesas     |");
+		System.out.println("|**********************|");
+		System.out.println("| 3 - Listar Reservas  |");
+		System.out.println("| 4 - Liberar Reserva  |");
+		System.out.println("|**********************|");
+		System.out.println("| 0 - Salir            |");
+		System.out.println("************************");
+		
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);	
+		int opcion = scan.nextInt();
+		
+		//MENU
+		switch (opcion) {
+		case 1:		
+			//SUBMENU 1
+			System.out.println("Introduce el nombre de la reserva: ");
+			Scanner scan2 = new Scanner(System.in);
+			String nombre = scan2.nextLine();
+			
+			System.out.println("¿Que mesa desea?");
+			Scanner scan3 = new Scanner(System.in);
+			int numeromesa = scan3.nextInt();
+			
+			if (numeromesa > 20 | numeromesa < 0) {
+				System.out.println("solo tenemos 20 mesas disponibles");
+				showMenu();
+				break;
+			}
+			
+			
+			//Lógica de reservar mesa
+			ReservaController control = new ReservaController(); //Creo objeto control
+			Persona[] personas = new Persona[4];				// Creo un array de personas con 5 posiciones
+			Persona cliente= new Cliente();						// Creo nuevo cliente
+			cliente.setNombre(nombre);							// Seteo el nombre introducido en scan2 a cliente
+			personas[0] = cliente;								// guardo este cliente  en la posicion 0 del array		
+			control.hacerReserva(personas,numeromesa);			//llamo metodo reservaMesa que agrega a la persona de scan1 a la primera mesa
+			
+			
+			//System.out.println("La persona" + personas[0] + "ha reservado la mesa" + Restaurante.mesas[0]);
+			
+			showMenu();
+			break;
+			
+		case 2:
+			//SUBMENU 2
+			System.out.println("Listando Mesas......");
+			System.out.println("");
+			ReservaController.listarMesas();
+			
+			showMenu();
+			break;
+		case 3:	
+			//SUBMENU 3 
+			System.out.println("Listando Reservas......");
+			System.out.println("");
+			ReservaController.listarReservas();
+			
+			showMenu();
+			break;
+		case 4:
+			System.out.println("¿Que mesa desea liberar de su reserva?");
+			Scanner scan4 = new Scanner(System.in);
+			int liberarmesa = scan4.nextInt();
+			
+			ReservaController.liberarReserva(liberarmesa);
+			
+			break;
+			
+		case 0:
+			//SUBMENU 4
+			System.out.println("Vuelva pronto");
+			System.out.println("");
+			break;
+			
+		default:
+			System.out.println("Error, introduzca un número válido [1-2-3-4-0]");
+			showMenu();
+			break;
+		}
+		
+	}
+
+}
